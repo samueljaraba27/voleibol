@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between items-center h-[100vh] gap-20 overflow-auto relative">
+    <div class="flex justify-between items-center h-[100vh] gap-20 overflow-auto scroll relative">
         <div class="flex flex-col items-start pl-20 gap-10">
             <template v-for="(equipo, index) in octavosDeFinal" :key="index">
                 <span class="text-white  p-4 border rounded-xl relative">
@@ -67,10 +67,10 @@ export default {
     data() {
         return {
             octavosDeFinal: [
-                { equipoLocal: 'Equipo A' },
-                { equipoLocal: 'Equipo B' },
-                { equipoLocal: 'Equipo C' },
-                { equipoLocal: 'Equipo D' },
+                { equipoLocal: 'Equipo' },
+                { equipoLocal: 'Equipo' },
+                { equipoLocal: 'Equipo' },
+                { equipoLocal: 'Equipo' },
             ],
         }
     }

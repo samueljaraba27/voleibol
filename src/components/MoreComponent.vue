@@ -1,7 +1,10 @@
 <template>
     <div
-        :class="expanded ? 'absolute flex justify-center items-end top-[120px] h-[500px] bg-[#D9D9D9] w-[100%] rounded-b-[20px] z-10 transition-all duration-300' : 'absolute flex justify-center items-end top-[120px] h-10 bg-[#D9D9D9] w-[100%] rounded-b-[20px] z-10 transition-all duration-300'">
-        <div class="flex flex-col justify-center items-center w-full cursor-pointer" @click="() => expanded = !expanded">
+        :class="expanded ? 'absolute top-[90px] h-[70vh] bg-[#F2F1F2] w-[100%] rounded-b-[20px] z-10 transition-all duration-300' : 'absolute flex justify-center items-end top-[90px] h-10 bg-[#D9D9D9] w-[100%] rounded-b-[20px] z-10 transition-all duration-300'">
+        <TodayComponent :visible="expanded ? true : false" />
+        <!-- <div class="flex flex-col justify-center items-center w-full cursor-pointer" -->
+        <div class="absolute flex flex-col items-center bottom-0 left-50 w-full cursor-pointer"
+            @click="() => expanded = !expanded">
             <article class="text-black font-bold text-xs" v-text="expanded ? 'OCULTAR' : 'MOSTRAR MAS'"></article>
             <span :class="{ 'rotate-180': expanded, 'rotate-0': !expanded }">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
@@ -13,9 +16,11 @@
     </div>
 </template>
 <script>
+import TodayComponent from './TodayComponent.vue'
 export default {
-    name: 'MoreComponent',
+    name: "MoreComponent",
     components: {
+        TodayComponent
     },
     data() {
         return {
@@ -23,9 +28,7 @@ export default {
         }
     },
     methods: {
-        showMore() {
-            this.expanded = !this.expanded;
-        }
+
     }
 }
 </script>
